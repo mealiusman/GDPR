@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <rdxreports_adminhtml_rdxreports_index>
+        <reference name="content">
+            <block type="rdxreports/adminhtml_rdxreports" name="rdxreports" />
+        </reference>
+    </rdxreports_adminhtml_rdxreports_index>
+</layout>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Rdxsports_Reportscustomer>
+            <version>0.0.1</version>
+        </Rdxsports_Reportscustomer>
+    </modules>
+    <global>
+        <models>
+            <rdxsports_reportscustomer>
+                <class>Rdxsports_Reportscustomer_Model</class>
+            </rdxsports_reportscustomer>
+        </models>
+    </global>
+    <adminhtml>
+        <rewrite>
+            <report_sales_sales_grid>Rdxsports_Reportscustomer_Block_Adminhtml_Report_Sales_Sales_Grid</report_sales_sales_grid>
+        </rewrite>
+        <events>
+            <catalog_product_save_before><!-- observe the event -->
+                <observers>
+                    <rdxsports_reportscustomer>
+                        <class>rdxsports_reportscustomer/observer</class>
+                        <method>autoMetaDescription</method>
+                    </rdxsports_reportscustomer>
+                </observers>
+            </catalog_product_save_before>
+        </events>
+    </adminhtml>
+</config>

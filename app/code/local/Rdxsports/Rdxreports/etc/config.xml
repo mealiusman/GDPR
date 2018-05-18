@@ -1,0 +1,102 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @category   Mycompany
+ * @package    Rdxsports_Rdxreports
+ * @author     Damian Alberto Pastorini
+ */
+ -->
+<config>
+    <modules>
+        <Rdxsports_Rdxreports>
+            <version>0.1.0</version>
+        </Rdxsports_Rdxreports>
+    </modules>
+    <admin>
+        <routers>
+            <rdxreports>
+                <use>admin</use>
+                <args>
+                    <module>Rdxsports_Rdxreports</module>
+                    <frontName>rdxreports</frontName>
+                </args>
+            </rdxreports>
+        </routers>
+    </admin>
+    <adminhtml>
+        <menu>
+            <report>
+                <children>
+                    <rdxreports translate="title" module="rdxreports">
+                        <title>Rdx Reports</title>
+                        <action>rdxreports/adminhtml_rdxreports</action>
+                    </rdxreports>
+                </children>
+            </report>
+        </menu>
+        <acl>
+            <resources>
+                <all>
+                    <title>Allow Everything</title>
+                </all>
+                <admin>
+                    <children>
+                        <report>
+                            <children>
+                                <rdxreports translate="title" module="rdxreports">
+                                    <title>Rdx Reports</title>
+                                    <action>rdxreports/adminhtml_rdxreports</action>
+                                </rdxreports>
+                            </children>
+                        </report>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <rdxreports>
+                    <file>rdxreports.xml</file>
+                </rdxreports>
+            </updates>
+        </layout>
+    </adminhtml>
+    <global>
+        <models>
+            <rdxreports>
+                <class>Rdxsports_Rdxreports_Model</class>
+                <resourceModel>rdxreports</resourceModel>
+            </rdxreports>
+        </models>
+        <resources>
+            <rdxreports_setup>
+                <setup>
+                    <module>Rdxsports_Rdxreports</module>
+                </setup>
+                <connection>
+                    <use>core_setup</use>
+                </connection>
+            </rdxreports_setup>
+            <rdxreports_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </rdxreports_write>
+            <rdxreports_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </rdxreports_read>
+        </resources>
+        <blocks>
+            <rdxreports>
+                <class>Rdxsports_Rdxreports_Block</class>
+            </rdxreports>
+        </blocks>
+        <helpers>
+            <rdxreports>
+                <class>Rdxsports_Rdxreports_Helper</class>
+            </rdxreports>
+        </helpers>
+    </global>
+</config>

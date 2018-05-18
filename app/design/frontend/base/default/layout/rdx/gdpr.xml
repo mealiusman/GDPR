@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <customer_account>
+        <reference name="customer_account_navigation">
+            <!--<action method="addLink" ifconfig="rdx_gdpr/configuration/gdprenabled">-->
+            <action method="addLink">
+                <name>delete</name>
+                <path>rdx_gdpr/customer/deleteconfirmation</path>
+                <label>Delete Account</label>
+            </action>
+        </reference>
+    </customer_account>
+
+    <rdx_gdpr_customer_deleteconfirmation>
+        <update handle="customer_account"/>
+        <reference name="content">
+            <block type="rdx_gdpr/deleteconfirmation" name="deleteconfirmation" template="rdx/gdpr/confirmation.phtml"/>
+            <block type="customer/account_dashboard" name="customer.account.link.back" template="customer/account/link/back.phtml"/>
+        </reference>
+    </rdx_gdpr_customer_deleteconfirmation>
+
+    <default>
+        <reference name="head">
+            <action method="addItem"><type>skin_css</type><name>css/rdx/gdpr/cookiealert.css</name></action>
+        </reference>
+        <reference name="after_body_start">
+            <block type="rdx_gdpr/cookiealert" before="-" name="cookiealert" template="rdx/gdpr/cookiealert.phtml" />
+        </reference>
+    </default>
+</layout>

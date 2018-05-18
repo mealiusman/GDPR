@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<config>
+<adminhtml>
+    <events>
+
+        <adminhtml_block_html_before>
+            <observers>
+                <rdxsports_reportscustomer_append_custom_sales_report_filters>
+                    <type>singleton</type>
+                    <class>Rdxsports_Reportscustomer_Model_Observer</class>
+                    <method>appendCustomSalesReportFilters</method>
+                </rdxsports_reportscustomer_append_custom_sales_report_filters>
+            </observers>
+        </adminhtml_block_html_before>
+
+    </events>
+</adminhtml>
+</config>

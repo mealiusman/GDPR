@@ -1,0 +1,17 @@
+<config>
+	<adminhtml>
+		<events>
+
+			<adminhtml_block_html_before>
+				<observers>
+					<helloworldbackend_append_custom_sales_report_filters>
+						<type>singleton</type>
+						<class>helloworldbackend/observer</class>
+						<method>appendCustomSalesReportFilters</method>
+					</helloworldbackend_append_custom_sales_report_filters>
+				</observers>
+			</adminhtml_block_html_before>
+
+		</events>
+	</adminhtml>
+</config>
